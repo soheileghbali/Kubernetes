@@ -97,6 +97,11 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 sudo kubectl taint node $HOSTNAME key:NoSchedule
 sudo  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubeadm reset
+
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
 kubeadm init
 ```
 ## 6 - Join Worker Nodes To Kubernetes Master Node
