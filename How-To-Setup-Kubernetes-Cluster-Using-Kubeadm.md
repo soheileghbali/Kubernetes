@@ -84,7 +84,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 ### initialize the master node control plane configurations using the following kubeadm command
 ```bash
-sudo kubeadm init --ignore-preflight-errors --pod-network-cidr=10.244.0.0/16 Swap
+sudo kubeadm init  --pod-network-cidr=10.244.0.0/16  --ignore-preflight-errors Swap
 ```
 #### Use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API
 ```bash
