@@ -84,7 +84,7 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 ### initialize the master node control plane configurations using the following kubeadm command
 ```bash
-sudo kubeadm init --ignore-preflight-errors Swap
+sudo kubeadm init --ignore-preflight-errors --pod-network-cidr=10.244.0.0/16 Swap
 ```
 #### Use the following commands from the output to create the kubeconfig in master so that you can use kubectl to interact with cluster API
 ```bash
@@ -96,13 +96,6 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```bash
 sudo kubectl taint node $HOSTNAME key:NoSchedule
 sudo  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-kubeadm reset
-
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-
-kubeadm init
 ```
 ## 6 - Join Worker Nodes To Kubernetes Master Node
 #### join the worker node to the master node using the Kubeadm join command you have got in the output while setting up the master node
