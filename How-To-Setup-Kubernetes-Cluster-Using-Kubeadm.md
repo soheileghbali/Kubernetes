@@ -94,6 +94,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 ## &#9830; 5 - If the master node status is not ready ! , do the following commands on the master node 
 ```bash
+sudo kubectl taint node $HOSTNAME key:NoSchedule
 sudo  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 ```
 ## 6 - Join Worker Nodes To Kubernetes Master Node
