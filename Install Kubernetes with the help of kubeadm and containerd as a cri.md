@@ -1,6 +1,6 @@
 # Introduction
 
-As you already know, Kubernetes is not supporting docker as a container runtime interface any more, and you need to choose another cri such as [CRIO](https://cri-o.io/) or [containerd](https://containerd.io/).
+As you already know, Kubernetes is not supporting docker as a container runtime enviroment any more, and you need to choose another cri such as [CRIO](https://cri-o.io/) or [containerd](https://containerd.io/).
 That said, it is possible to continue using docker as a cri with the help of [this](https://github.com/Mirantis/cri-dockerd) project.
 In the following steps, I will show you how to install Kubernetes on premises with the help of [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/).
 
