@@ -57,8 +57,11 @@ Apply sysctl params without reboot.
     sudo containerd config default | sudo tee /etc/containerd/config.toml
 Set the cgroup driver for containerd to systemd which is required for the kubelet.
 For more information on this config file see:
-https://github.com/containerd/cri/blob/master/docs/config.md 
+
+https://github.com/containerd/cri/blob/master/docs/config.md
+
 https://github.com/containerd/containerd/blob/master/docs/ops.md
+
 At the end of this section, change SystemdCgroup = false to SystemdCgroup = true
 
             [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
