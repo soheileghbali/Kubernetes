@@ -191,3 +191,10 @@ You can also generate token and print the join command (on the control plane):
 Run below command on the control-plane to see if the node joined the cluster.
 
     kubectl get nodes
+
+### Enable Kubectl Auto-complete (optional)
+Ok, so now that we're tired of typing commands out, let's enable bash auto-complete of our kubectl commands.
+
+    sudo apt-get install -y bash-completion
+    echo "source <(kubectl completion bash)" >> ~/.bashrc
+    source ~/.bashrc
